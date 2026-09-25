@@ -1,7 +1,7 @@
 import {infoCartas ,type Tablero} from "./modelo";
 import { iniciaPartida, sonPareja, esPartidaCompleta } from "./motor";
 import { DURACION_FLIP, TIEMPO_ESPERA } from "./constantes";
-
+import pngintUrl from "../img/pngint.png";
 let turnoEnProceso: boolean = false;
 
 const ocultarBotones = (): void => {
@@ -45,7 +45,7 @@ const quitandoFlipImagen = (
 ) => {
   const imagen = cartaDiv.querySelector<HTMLImageElement>("img");
   if (imagen) {
-    imagen.src = "/memorize/img/pngint.png";
+    imagen.src = pngintUrl;
     imagen.classList.remove("flip");
     imagen.setAttribute(
       "data-id-imagen",
@@ -172,16 +172,16 @@ const voltearCartasTrasRetraso = (
   setTimeout(() => {
     tablero.cartas[indiceA].estaVuelta = false;
     tablero.cartas[indiceB].estaVuelta = false;
-    actualizarImagenCarta(indiceA, "/memorize/img/pngint.png");
-    actualizarImagenCarta(indiceB, "/memorize/img/pngint.png");
+    actualizarImagenCarta(indiceA, pngintUrl);
+    actualizarImagenCarta(indiceB, pngintUrl);
     const cartaA = document.getElementById(
       `carta-${indiceA}`
     ) as HTMLImageElement;
     const cartaB = document.getElementById(
       `carta-${indiceB}`
     ) as HTMLImageElement;
-    if (cartaA) cartaA.src = "/memorize/img/pngint.png";
-    if (cartaB) cartaB.src = "/memorize/img/pngint.png";
+    if (cartaA) cartaA.src = pngintUrl;
+    if (cartaB) cartaB.src = pngintUrl;
   }, TIEMPO_ESPERA);
 };
 
