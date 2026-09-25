@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: memorize # Indica que el proyecto de Vite está dentro de la carpeta memorize
+        working-directory: MiMemorize # Indica que el proyecto de Vite está dentro de la carpeta memorize
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: memorize/package-lock.json
+          cache-dependency-path: MiMemorize/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './memorize/dist' # Sube la carpeta compilada que genera Vite
+          path: './MiMemorize/dist' # Sube la carpeta compilada que genera Vite
 
       - name: Deploy to GitHub Pages
         id: deployment
