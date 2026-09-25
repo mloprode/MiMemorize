@@ -45,7 +45,7 @@ const quitandoFlipImagen = (
 ) => {
   const imagen = cartaDiv.querySelector<HTMLImageElement>("img");
   if (imagen) {
-    imagen.src = "../img/pngint.png";
+    imagen.src = "/memorize/img/pngint.png";
     imagen.classList.remove("flip");
     imagen.setAttribute(
       "data-id-imagen",
@@ -172,16 +172,16 @@ const voltearCartasTrasRetraso = (
   setTimeout(() => {
     tablero.cartas[indiceA].estaVuelta = false;
     tablero.cartas[indiceB].estaVuelta = false;
-    actualizarImagenCarta(indiceA, "../img/pngint.png");
-    actualizarImagenCarta(indiceB, "../img/pngint.png");
+    actualizarImagenCarta(indiceA, "/memorize/img/pngint.png");
+    actualizarImagenCarta(indiceB, "/memorize/img/pngint.png");
     const cartaA = document.getElementById(
       `carta-${indiceA}`
     ) as HTMLImageElement;
     const cartaB = document.getElementById(
       `carta-${indiceB}`
     ) as HTMLImageElement;
-    if (cartaA) cartaA.src = "../img/pngint.png";
-    if (cartaB) cartaB.src = "../img/pngint.png";
+    if (cartaA) cartaA.src = "/memorize/img/pngint.png";
+    if (cartaB) cartaB.src = "/memorize/img/pngint.png";
   }, TIEMPO_ESPERA);
 };
 
